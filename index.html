@@ -1,40 +1,124 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DR MINE</title>
+export default function MinecraftAddonSite() { const addons = [ { title: "FPS BOOST", image: "https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=1200&auto=format&fit=crop", description: "Melhora o desempenho do Minecraft PE.", }, { title: "REALISTIC SHADER", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop", description: "Shader realista com iluminação top.", }, { title: "PVP PACK", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop", description: "Textura focada em PvP competitivo.", }, { title: "SURVIVAL UI", image: "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=1200&auto=format&fit=crop", description: "Interface survival personalizada.", }, ];
 
-<style>
+return ( <div className="min-h-screen bg-zinc-950 text-white"> {/* Header */} <header className="sticky top-0 z-50 bg-zinc-900/90 backdrop-blur border-b border-zinc-800"> <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"> <h1 className="text-2xl font-bold text-green-400"> ADDONS APELOS </h1>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<nav className="hidden md:flex gap-6 text-sm text-zinc-300">
+        <a href="#" className="hover:text-green-400 transition">Home</a>
+        <a href="#" className="hover:text-green-400 transition">Shaders</a>
+        <a href="#" className="hover:text-green-400 transition">PvP</a>
+        <a href="#" className="hover:text-green-400 transition">FPS</a>
+      </nav>
+    </div>
+  </header>
 
-body{
-background:#0a0a0a;
-color:white;
-}
+  {/* Hero */}
+  <section className="relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-transparent blur-3xl"></div>
 
-.topo{
-background:linear-gradient(180deg,#2b0000,#0a0a0a);
-padding:25px;
-position:sticky;
-top:0;
-border-bottom:1px solid #550000;
-z-index:999;
-}
+    <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+      <div className="max-w-2xl">
+        <h2 className="text-5xl md:text-6xl font-black leading-tight">
+          Baixe os melhores addons para Minecraft PE
+        </h2>
 
-.logo{
-font-size:40px;
-font-weight:900;
-text-align:center;
-}
+        <p className="mt-6 text-zinc-300 text-lg">
+          Site estilo portal de addons com botão personalizado,
+          imagem do addon e download rápido.
+        </p>
 
-.logo span{
+        <div className="mt-8 flex gap-4">
+          <button className="bg-green-500 hover:bg-green-400 transition px-6 py-3 rounded-2xl font-bold text-black shadow-lg shadow-green-500/30">
+            Explorar Addons
+          </button>
+
+          <button className="border border-zinc-700 hover:border-green-400 px-6 py-3 rounded-2xl transition">
+            Ver Categorias
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Search */}
+  <section className="max-w-7xl mx-auto px-4 mt-4">
+    <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-4 flex flex-col md:flex-row gap-4">
+      <input
+        type="text"
+        placeholder="Pesquisar addon..."
+        className="flex-1 bg-zinc-950 border border-zinc-800 rounded-2xl px-4 py-3 outline-none focus:border-green-400"
+      />
+
+      <button className="bg-green-500 hover:bg-green-400 text-black font-bold px-6 py-3 rounded-2xl transition">
+        Pesquisar
+      </button>
+    </div>
+  </section>
+
+  {/* Addons Grid */}
+  <section className="max-w-7xl mx-auto px-4 py-14">
+    <div className="flex items-center justify-between mb-8">
+      <h3 className="text-3xl font-bold">Addons em destaque</h3>
+
+      <span className="text-zinc-400 text-sm">
+        Atualizados diariamente
+      </span>
+    </div>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {addons.map((addon, index) => (
+        <div
+          key={index}
+          className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-green-400 transition group"
+        >
+          <div className="relative overflow-hidden h-52">
+            <img
+              src={addon.image}
+              alt={addon.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+            />
+
+            <div className="absolute top-3 left-3 bg-black/70 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-green-400">
+              NOVO
+            </div>
+          </div>
+
+          <div className="p-5">
+            <h4 className="text-xl font-bold">{addon.title}</h4>
+
+            <p className="text-zinc-400 text-sm mt-2 leading-relaxed">
+              {addon.description}
+            </p>
+
+            {/* Botão personalizado com imagem */}
+            <button className="mt-5 w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3 rounded-2xl transition flex items-center justify-center gap-3">
+              <img
+                src={addon.image}
+                alt="addon"
+                className="w-8 h-8 rounded-lg object-cover"
+              />
+              DOWNLOAD ADDON
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="border-t border-zinc-800 mt-10">
+    <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between gap-4 text-zinc-400 text-sm">
+      <p>© 2026 Addons Apelos - Todos os direitos reservados.</p>
+
+      <div className="flex gap-4">
+        <a href="#" className="hover:text-green-400 transition">Termos</a>
+        <a href="#" className="hover:text-green-400 transition">Privacidade</a>
+        <a href="#" className="hover:text-green-400 transition">Contato</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+); }.logo span{
 color:#ff2020;
 }
 
