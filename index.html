@@ -1,40 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DR MINE</title>
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-background:#000;
+background:#070707;
 color:white;
-font-family:Arial;
+}
+
+header{
+background:linear-gradient(to bottom,#500000,#000);
+padding:40px 20px;
 text-align:center;
-padding:30px;
+border-bottom:2px solid #a00000;
 }
-.box{
+
+.logo{
+font-size:45px;
+font-weight:bold;
+}
+
+.logo span{
+color:red;
+}
+
+.sub{
+margin-top:10px;
+color:#ccc;
+}
+
+.btn{
+margin-top:20px;
+display:inline-block;
+background:red;
+padding:14px 28px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.marquee{
 background:#111;
-border:2px solid red;
-padding:20px;
-border-radius:20px;
+overflow:hidden;
+padding:14px 0;
+border-top:1px solid red;
+border-bottom:1px solid red;
+white-space:nowrap;
 }
-button{
+
+.track{
+display:inline-block;
+animation:slide 18s linear infinite;
+font-weight:bold;
+color:#ff4444;
+font-size:18px;
+}
+
+@keyframes slide{
+from{
+transform:translateX(100%);
+}
+
+to{
+transform:translateX(-100%);
+}
+}
+
+.container{
+padding:20px;
+}
+
+.titulo{
+font-size:25px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+border-color:red;
+}
+
+.thumb{
+height:120px;
+background:#1b1b1b;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:45px;
+}
+
+.info{
+padding:15px;
+}
+
+.nome{
+font-size:18px;
+font-weight:bold;
+}
+
+.baixar{
+margin-top:10px;
+width:100%;
 background:red;
 color:white;
 border:none;
-padding:12px;
+padding:10px;
 border-radius:10px;
+font-weight:bold;
 }
+
+footer{
+text-align:center;
+padding:30px;
+color:#666;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="box">
-<h1>DR MINE 🔥</h1>
-<p>Baixe meus addons e arquivos oficiais</p>
+<header>
 
-<button>⬇ BAIXAR ADDONS</button>
-
+<div class="logo">
+DR <span>MINE</span>
 </div>
 
-</body>
-</html>
+<p class="sub">
+Baixe meus addons e arquivos oficiais Minecraft
+</p>
+
+<a class="btn" href="#">
+MEU TIKTOK
+</a>
+
+</header>
+
+
+<div class="marquee">
+
+<div class="
